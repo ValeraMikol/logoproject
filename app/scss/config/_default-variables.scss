@@ -1,0 +1,29 @@
+// Fonts
+$f-main: 'Roboto',
+sans-serif;
+
+// Font sizes
+$fz-root: 16;
+
+// Colors
+$c-white: #fff;
+$c-white-300: #f1f1f1;
+$c-black: #000;
+$c-blue: #3880C0;
+
+$wrap: 1414px;
+$wrapRem: 1180;
+// $wrap-content: calc(1295px + 30px);
+
+$xs: 420;
+$phone: 576;
+$pad: 768;
+$laptop: 850;
+$xl: 1024;
+
+
+// Time
+$time-fast: 300ms;
+
+// Timing functions
+$timing-functions: ('easeInOutCubic': cubic-bezier(0.645, 0.045, 0.355, 1));

@@ -1,0 +1,41 @@
+.footer {
+
+    padding: 0 rem(45) rem(45) rem(45);
+
+    p {
+        font-size: rem(17);
+    }
+
+    &__body {
+        @include dflex(center, wrap, space-between);
+    }
+
+    &__text {
+        color: #000000;
+        font-family: Lato;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &__menu {
+        transform: translateX(rem(-110));
+    }
+
+    &__list {
+        @include dflex(center, wrap, space-between);
+    }
+
+    &__item {
+        font-family: Lato;
+        font-size: rem(16);
+        font-weight: 300;
+        text-transform: uppercase;
+        list-style-type: none;
+        margin-right: rem(16);
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+    }
+}

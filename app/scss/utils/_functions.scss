@@ -1,0 +1,13 @@
+@import "../config/default-variables";
+
+@function em($prop) {
+    @return $prop + em;
+  }
+  
+  @function rem($pixels, $root: $fz-root) {
+    @return $pixels / $root + rem;
+  } 
+  
+  @function i($name) {
+    @return url('../assets/i/#{$name}');
+  }

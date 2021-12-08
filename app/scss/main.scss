@@ -1,0 +1,28 @@
+@import "./utils/mixins";
+@import "./config/vendor";
+@import "./config/default-variables";
+@import "./config/global";
+@import "./utils/functions";
+
+._container { 
+  @include container(rem($wrapRem));
+  padding: 0 rem(20);
+  margin: 0 auto;
+}
+.header{
+  padding-top:0;
+}
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@import "./components/index";
+@import "./components/blocks/header.scss";
+
+
+
+// MAIN PAGE

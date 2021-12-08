@@ -1,0 +1,22 @@
+image: registry.gitlab.com/zilliond/docker-images/node
+
+before_script:
+  - yarn
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
+    - .cache/
+    - dist/
+
+pages:
+  script:
+    - mkdir dist/ || true
+    - yarn gulp
+  artifacts:
+    paths:
+      - dist
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
