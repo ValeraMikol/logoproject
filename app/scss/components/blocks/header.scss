@@ -7,6 +7,10 @@
 
     &__bottom {
     }
+
+    @media(max-width: 992px){
+        background:url("../../../img/headerimg/headerbg.png") 0 -20px no-repeat;
+    }
 }
 .top-header {
 
@@ -14,16 +18,20 @@
         display: flex;
         align-items: center;
         height: rem(90);
-
+        @media(max-width: 992px){
+            height: rem(70);
+        }
     }
 
     &__column {
         flex: 0 1 50%;
         &_logo{
-            align-self: flex-start;
-            padding: rem(40) 0 0 0;
-            flex: 0 0 130px;
+            flex: 0 0 100px;
             text-align: center;
+            @media(min-width: 992px){
+                align-self: flex-start;
+                padding: rem(40) 0 0 0;
+            }
         }
     }
 
@@ -31,6 +39,13 @@
     }
 
     &__logo {
+        display: inline-block;
+        @media(max-width: 992px){
+            width: 100px;
+            img{
+                max-width: 100%;
+            }
+        }
     }
 
     &__contacts {
@@ -43,6 +58,21 @@
     }
 
     &__body {
+        @media(max-width: 992px){
+            position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        display: block;
+        z-index: 2;
+        padding: rem(70) rem(20) rem(30) rem(20);
+        background-color: #14c0d4;
+        }
+        &._active{
+            
+        }
     }
 
     &__list {
@@ -53,7 +83,7 @@
             flex: 0 0 33.333%;
             white-space: nowrap;
         }
-        @media (max-width: $wrapRem+px){
+        @media (max-width: 1200px){
             grid-template-columns: rem(90) rem(110) rem(160);
         }
     }
@@ -76,20 +106,72 @@
     }
 }
 .icon-menu {
+    display: none;
+    @media(max-width: 992px){
+        display: block;
+        position: relative;   
+        width: rem(30);
+        height: rem(18);
+        cursor: pointer;
+        z-index: 5;
+        span{
+            transition: all 0.3s ease 0s;
+            top: calc(50% - 1px);
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: #fff;
+            &:first-child{
+                top: 0;
+            }
+            &:last-child{
+                top: auto;
+                bottom: 0;
+            }
+        }
+        &._active{
+            span{
+                transform: scale(0);
+                &:first-child{
+                    transform: rotate(-45deg);
+                    top: calc(50%-1px);
+
+                }
+                &:last-child{
+                    transform: rotate(45deg);
+                    bottom: calc(50% -1px);
+                }
+            }
+        }
+    }
+
 }
 .contacts-header {
     display: flex;
     justify-content: center;
+    @media(max-width: 992px){
+       justify-content: flex-end;
+    }
     
     &__column {
         padding: 0 rem(30);
-        border-right: 1px solid white;
-        &:last-child{
+        border-left: 1px solid white;
+        &:first-child{
             border: 0;
         }
-        @media (max-width: $wrapRem + px){
+        @media (max-width: 1200px){
             padding: 0 rem(15);
         }
+        @media (max-width: 992px){
+            &:last-child{
+                display: none;
+            }
+        }
+        @media (max-width: 640px){
+            padding: 0;
+        }
+
     }
 
     &__item {
@@ -97,9 +179,13 @@
         &_icon {
             background: url("../../../img/iconphone.png") left no-repeat;
             padding: 0  0 0 rem(37);
-            @media (max-width: $wrapRem+px){
+            @media (max-width: 1200px){
                 padding: 0  0 0 rem(25); 
                 background-size: rem(15);
+            }
+            @media (max-width: 640px){
+                background: none;
+                padding: 0;
             }
         }
     }
@@ -108,6 +194,9 @@
         font-size: rem(12);
         font-weight: 300;
         color: #fff;
+        @media (max-width: 640px){
+            font-size: 0;
+        }
     }
 
     &__phone {
@@ -115,8 +204,16 @@
         font-size: rem(18);
         font-weight: 900;
         white-space: nowrap;
-        @media (max-width: $wrapRem + px){
+        @media (max-width:1200px){
             font-size: rem(16);
+        }
+        @media (max-width: 640px){
+            font-size: 0;
+            background: url("../../../img/iconphone.png") left no-repeat;
+            width: 19px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
         }
     }
 }
@@ -145,14 +242,13 @@
     align-items: center;
     li{
         margin: 0 rem(54) 0 0 ;
-        @media(max-width: $wrapRem + px){
+        @media(max-width: 1200px){
             margin: 0 30 / $wrapRem * 100vw 0 0;
         }
     }
 
     &__item{
         padding: 0 0 0 rem(36);
-        background: url("../../../img/icon1\ \(1\).png") left no-repeat;
         display: inline-block;
         line-height: rem(24);
         font-size: rem(14);
@@ -160,11 +256,6 @@
         span{
             border-bottom: 1px dashed ;
         }
-        @media(max-width: $wrapRem+px){
-            padding: 0 0 0 rem(30);
-        }
-
-
         &_login{
             background: url("../../../img/icon1\ \(1\).png") left no-repeat;
         }
@@ -174,6 +265,16 @@
         &_email{
             background: url("../../../img/icon3\ \(2\).png") left no-repeat;
         }
+        @media(max-width: 1200px){
+            padding: 0 0 0 rem(30);
+        }
+        @media (max-width: 992px){
+            padding: 0;
+            background: none;  
+        }
+
+
+        
     }  
 }
 .info-header {
@@ -185,8 +286,9 @@
         &:last-child{
             padding: 0  ; 
         }
-        @media(max-width: $wrapRem+px){
+        @media(max-width: 1200px){
             margin: 0 30 / $wrapRem * 100vw 0 0;
+            padding: 0;
         }
     }
 
@@ -201,7 +303,7 @@
         span{
             border-bottom: 1px dashed ;
         }
-        @media(max-width: $wrapRem + px){
+        @media(max-width: 1200px){
             background: none;
             padding: 0;
         }
@@ -221,9 +323,13 @@
             font-weight: 900;
             margin: 0 rem(4) 0 0;
         }
-        @media(max-width: $wrapRem + px){
+        @media(max-width: 1200px){
             background: none;
             padding: 0;
+        }
+        @media (max-width: 992px){
+           display: none; 
+           
         }
     }
 
@@ -245,7 +351,7 @@
             color: #fff;
             right: -25px;
             top: -3px;
-            @media (max-width: $wrapRem + px){
+            @media (max-width: 1200px){
                 right: -15px;
             }
             
