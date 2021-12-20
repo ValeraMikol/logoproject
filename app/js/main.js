@@ -46,13 +46,13 @@ window.addEventListener('DOMContentLoaded', () => {
     //             }
     //         }
     //         dynamicAdaptSort(daElementsArray);
-    
+
     //         //Создаем события в точке брейкпоинта
     //         for (let index = 0; index < daElementsArray.length; index++) {
     //             const el = daElementsArray[index];
     //             const daBreakpoint = el.breakpoint;
     //             const daType = el.type;
-    
+
     //             daMatchMedia.push(window.matchMedia("(" + daType + "-width: " + daBreakpoint + "px)"));
     //             daMatchMedia[index].addListener(dynamicAdapt);
     //         }
@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //             const daPlace = el.place;
     //             const daBreakpoint = el.breakpoint;
     //             const daClassname = "_dynamic_adapt_" + daBreakpoint;
-    
+
     //             if (daMatchMedia[index].matches) {
     //                 //Перебрасываем элементы
     //                 if (!daElement.classList.contains(daClassname)) {
@@ -89,10 +89,10 @@ window.addEventListener('DOMContentLoaded', () => {
     //         }
     //         //customAdapt();
     //     }
-    
+
     //     //Вызов основной функции
     //     dynamicAdapt();
-    
+
     //     //Функция возврата на место
     //     function dynamicAdaptBack(el) {
     //         const daIndex = el.getAttribute('data-da-index');
@@ -140,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // }());
 
     let menuParents = document.querySelectorAll('.menu-page__parent');
-    
+
     menuParents.forEach(item => {
         const menuParent = item;
         menuParent.addEventListener('mouseenter', () => {
@@ -149,27 +149,30 @@ window.addEventListener('DOMContentLoaded', () => {
         menuParent.addEventListener('mouseleave', () => {
             menuParent.classList.remove('_active');
         });
-        
+
     });
-   
+
     const burgerButton = document.querySelector('.menu-page__burger'),
         listBody = document.querySelector('.menu-page__body');
-    
+
     burgerButton.addEventListener('click', () => {
         burgerButton.classList.toggle('_active');
         listBody.classList.toggle('_active');
 
     });
-    
-    
-    
 
-     
-    
 
+    const searchSelect = document.querySelector('.search-page__select');
+    const categoriesSearch = document.querySelector('.categories-search');
+    searchSelect.addEventListener('click', (e) => {
+        categoriesSearch.classList.toggle('_active');
+        searchSelect.classList.toggle('_active');
+    });
+
+    // const checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
+
+    // checkboxCategory.forEach(item) {
+    //     const checkboxCategory = item;
+    // }
 
 })
-
-
-
-
